@@ -30,6 +30,16 @@ while True:
 
     elif opcao == 2:
         print('SCORE')
+        dados = fH.listarArquivo('score.txt')
+
+        if not dados:
+            print('Score vazio!')
+        else:
+            i = 1
+            for jogador in dados:
+                print('{} -> {}, Pontuação: {}'.format(i, jogador[0], jogador[1][:-1]))
+                i+=1
+            
     elif opcao == 3:
         print('Saindo do jogo... Até mais!')
         break
